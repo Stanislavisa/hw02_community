@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Post, Group
+from .models import Group, Post
 
 
 class PostAdmin(admin.ModelAdmin):
+    """Класс описывающий таблицу Post"""
     list_display = ("pk", "text", "pub_date", "author", "group")
     search_fields = ("text",)
     list_filter = ("pub_date",)
@@ -11,6 +12,7 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class GroupAdmin(admin.ModelAdmin):
+    """Класс описывающий таблицу Group"""
     list_display = ("title", "slug", "description")
     search_fields = ("title",)
     empty_value_display = "-пусто-"
